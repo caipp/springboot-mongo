@@ -1,0 +1,13 @@
+---
+buildName: "springboot"
+links:
+  Git: "http://gogs/gogsadmin/springboot.git"
+  Job: "http://jenkins.default.caistars.com/job/springboot"
+  Production: "http://10.68.64.18:80/kubernetes/pods?namespace=default-production"
+  Staging: "http://10.68.64.18:80/kubernetes/pods?namespace=default-staging"
+  Testing: "http://10.68.64.18:80/kubernetes/pods?namespace=default-testing"
+environments:
+  Testing: "default-testing"
+  Staging: "default-staging"
+  Production: "default-production"
+useLocalFlow: true
