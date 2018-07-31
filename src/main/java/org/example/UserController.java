@@ -43,12 +43,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/add/{name}", method = { RequestMethod.GET })
-    public User post(@PathVariable(" name") String name) {
+    public User post(@PathVariable("name") String name) {
         return userRepository.save(new User(new Random().nextLong(), name, 30));
     }
 
     @RequestMapping(value = "/init/{size}", method = { RequestMethod.GET })
-    public void init(@PathVariable(" size") Long size) {
+    public void init(@PathVariable("size") int size) {
         for(Long i =0L;i< size;i++){
             userRepository.save(new User(i, "name"+size, new Random().nextInt()));
         }
