@@ -47,7 +47,7 @@ public class UserController {
         return userRepository.save(new User(new Random().nextLong(), name, 30));
     }
 
-    @RequestMapping(value = "/add/{size}", method = { RequestMethod.GET })
+    @RequestMapping(value = "/init/{size}", method = { RequestMethod.GET })
     public void init(@PathVariable(" size") Long size) {
         for(Long i =0L;i< size;i++){
             userRepository.save(new User(i, "name"+size, new Random().nextInt()));
