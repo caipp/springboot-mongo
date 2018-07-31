@@ -37,9 +37,21 @@ public class UserController {
         return userRepository.findOne(id);
     }
 
+    @RequestMapping(value = "/size", method = { RequestMethod.GET })
+    public int getALL() {
+        return userRepository.findAll().size();
+    }
+
     @RequestMapping(value = "/add/{name}", method = { RequestMethod.GET })
     public User post(@PathVariable(" name") String name) {
         return userRepository.save(new User(new Random().nextLong(), name, 30));
+    }
+
+    @RequestMapping(value = "/add/{size}", method = { RequestMethod.GET })
+    public void init(@PathVariable(" size") Long size) {
+        for(Long i =0L;i< size;i++){
+            userRepository.save(new User(i, "name"+size, new Random().nextInt()));
+        }
     }
 
 
